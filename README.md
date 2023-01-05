@@ -1,4 +1,4 @@
-# Random Password Generator - (HTML, CSS, JavaScript)
+# Random Password Generator - (HTML, CSS, JavaScript, Electron)
 
 ### Description:
 
