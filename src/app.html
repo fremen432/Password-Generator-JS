@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Password Generator</title>
+        <link rel="stylesheet" href="./app.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>Password Generator</h1>
+            </header>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Generate a Password</h2>
+                </div>
+                <div id="selections" class="selections box">
+                    <div
+                        id="selection-labels"
+                        class="selection-labels flex-column box"
+                    >
+                        <label for="checkbox-hasLow"
+                            >Include lower-case characters?</label
+                        >
+
+                        <label for="checkbox-hasUp"
+                            >Include upper-case characters?</label
+                        >
+
+                        <label for="checkbox-hasNum"
+                            >Include number characters?</label
+                        >
+
+                        <label for="checkbox-hasSpe"
+                            >Include special characters?</label
+                        >
+                        <label for="checkbox-hasSpe"
+                            >How many characters?</label
+                        >
+                    </div>
+                    <div
+                        id="selection-checkboxes"
+                        class="selection-checkboxes flex-column box"
+                    >
+                        <input
+                            type="checkbox"
+                            name="checkbox-hasLow"
+                            id="checkbox-hasLow"
+                            checked
+                            class="checkbox"
+                        />
+
+                        <input
+                            type="checkbox"
+                            name="checkbox-hasUp"
+                            id="checkbox-hasUp"
+                            checked
+                        />
+                        <input
+                            type="checkbox"
+                            name="checkbox-hasNum"
+                            id="checkbox-hasNum"
+                            checked
+                        />
+                        <input
+                            type="checkbox"
+                            name="checkbox-hasSpe"
+                            id="checkbox-hasSpe"
+                            checked
+                        />
+                        <div id="charLen" class="selections">
+                            <input
+                                id="charLen_amount"
+                                type="number"
+                                value="50"
+                                min="1"
+                                max="100"
+                                oninput="charLen_rangeInput.value=charLen_amount.value"
+                                style="width: 50px"
+                            />
+
+                            <input
+                                id="charLen_rangeInput"
+                                type="range"
+                                min="1"
+                                max="100"
+                                oninput="charLen_amount.value=charLen_rangeInput.value"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <textarea
+                        readonly
+                        id="password-textarea"
+                        placeholder="Your Secure Password"
+                        aria-label="Generated Password"
+                    ></textarea>
+                </div>
+                <div class="card-footer">
+                    <button id="pwGenerate" class="btn">
+                        Generate Password
+                    </button>
+                    <button id="pwCopy" class="btn">Copy Password</button>
+                </div>
+            </div>
+        </div>
+        <script src="./app.js"></script>
+    </body>
+</html>
